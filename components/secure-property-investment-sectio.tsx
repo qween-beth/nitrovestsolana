@@ -1,30 +1,11 @@
 import type { NextPage } from "next";
 import { useState } from "react";
+import Link from "next/link";
 
 const SecurePropertyInvestmentSection: NextPage = () => {
   const [contactModalVisible, setContactModalVisible] = useState(false);
 
-  const handleContactNowClick = () => {
-    console.log("Contact Now button clicked!");
-    setContactModalVisible(true);
-  };
 
-  const handleContactModalClose = () => {
-    setContactModalVisible(false);
-  };
-
-  const ContactModal = () => {
-    return (
-      <div className="modal">
-        <div className="modal-content">
-          <h2>Contact Form</h2>
-          <button onClick={handleContactModalClose} className="close-btn">
-            Close
-          </button>
-        </div>
-      </div>
-    );
-  };
 
   return (
     <div className="w-full mx-auto mt-16 mb-20 flex flex-col lg:flex-row items-center justify-between">
@@ -39,39 +20,43 @@ const SecurePropertyInvestmentSection: NextPage = () => {
           Get started, setup your account to start buying or listing today!
         </p>
 
-        <div className="w-full flex flex-col lg:flex-row justify-start items-center gap-3">
-          <button
-            className="h-[60px] w-[200px] bg-mediumblue-100 flex flex-col box-border items-center justify-center 
-            tracking-[0.07em] text-xl font-semibold [-webkit-text-stroke:0.5px_#2639ed] text-white rounded-13xl 
-            hover:shadow-lg transition-shadow" // Add hover and transition effect here
-            onClick={handleContactNowClick}
+        <div className="w-full flex flex-col lg:flex-row justify-start items-center gap-6">
+        <Link href="/launchapp">
+          <button className="h-[50px] w-[140px] bg-mediumblue-100 flex flex-col box-border items-center justify-center 
+            tracking-[0.07em] text-lg font-semibold text-white rounded-3xl hover:bg-blue-500 transition-shadow
+            border-[0.5px] animate-pulse"
           >
-            Contact Now
+            Mint
           </button>
+        </Link>
 
           <div className="flex flex-row items-center justify-start gap-2">
             <div className="w-[45px] h-[45px] bg-white rounded-full flex justify-center items-center">
               <img
-                className=""
+                className=" hover:bg-blue-500"
                 alt="play icon"
                 src="/Play.svg"
               />
             </div>
-            <p className="font-medium">Watch Video</p>
+            <button className="font-semibold bg-mediumblue-100 hover:bg-blue-500 text-white py-2 px-4 rounded">
+              Watch Video
+            </button>
+
+
           </div>
         </div>
 
         <div className="w-full mt-9 h-fit flex flex-row items-center justify-between gap-9 text-13xl">
           <div className="flex flex-row items-center justify-center gap-2">
-            <p className="font-semibold">30k+</p>
-            <p className="text-lg text-mediumblue-100">Users</p>
+          <p className="font-semibold animate-pulse">30k+</p>
+          <p className="text-lg text-mediumblue-100">Users</p>
           </div>
           <div className="flex flex-row items-center justify-center gap-2">
-            <p className="font-semibold">20k+</p>
+            <p className="font-semibold animate-pulse">20k+</p>
             <p className="text-lg text-mediumblue-100">Auction</p>
           </div>
           <div className="flex flex-row items-center justify-center gap-2">
-            <p className="font-semibold">50k+</p>
+            <p className="font-semibold animate-pulse">50k+</p>
             <p className="text-lg text-mediumblue-100">
               Properties
             </p>
